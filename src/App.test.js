@@ -1,10 +1,15 @@
-import React from 'react';
+import React from 'react'
 import { shallow } from 'enzyme'
-import App from './App';
+import App from './App'
 
 describe('App', () => {
+  const wrapper = shallow(<App />)
+
   it('should have `th` "Items"', () => {
-    const wrapper = shallow(<App />)
     expect(wrapper.contains(<th>Items</th>)).toBe(true)
+  })
+
+  it('should have button element', () => {
+    expect(wrapper.containsMatchingElement(<button>Add item</button>)).toBe(true)
   })
 })
