@@ -12,4 +12,9 @@ describe('App', () => {
   it('should have button element', () => {
     expect(wrapper.containsMatchingElement(<button>Add item</button>)).toBe(true)
   })
+
+  it('`button` should be disabled', () => {
+    const button = wrapper.find('button').first()
+    expect(button.props().disabled).toBe(true)
+  })
 })
